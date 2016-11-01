@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script>
+
+var solution = 0;
+var fairecalcul = true;
+while(solution < 3) {
+var nombre1 = Math.round(Math.random() * 10);
+
+var nombre2 = Math.round(Math.random() * 10);
+
+var operateur = ["+" , "-" , "*"];
+var choixoperation = operateur[Math.floor(Math.random() * operateur.length)];
+
+var reponse = eval(+nombre1 + choixoperation + +nombre2 );
+var reponseutilisateur = prompt("Comment font " + nombre1 + " " + choixoperation + " " + nombre2 + " ?");
+if(reponseutilisateur == reponse){
+  alert("Bien joué !");
+  solution ++ ;
+  alert("Vous avez " + solution + " point(s).");
+}
+else if (solution  < 0) {
+  alert("Faux ! Recommencez.");
+  fairecalcul = false;
+  break;
+}
+else {
+  alert("Non ! Un point en moins.");
+  solution = solution - 1 ;
+  alert("Vous avez " + solution + " point(s).");
+  }
+}
+
+ while (fairecalcul) {
+ var nombre1 = Math.round(Math.random() * 10);
+ var nombre2 = Math.round(Math.random() * 10);
+ var nombre3 = Math.round(Math.random() * 10);
+ var operateur = ["+" , "-" , "*"];
+ var choixoperation1 = operateur[Math.floor(Math.random() * operateur.length)];
+ var choixoperation2 = operateur[Math.floor(Math.random() * operateur.length)];
+ var reponse = eval(+nombre1 + choixoperation1 + +nombre2 + choixoperation2 + +nombre3 );
+ var reponseutilisateur = prompt("Dernière question ! Combien font " + nombre1 + " " + choixoperation1 + " " + nombre2 + " " + choixoperation2 + " " + nombre3 + " ?");
+ if(reponseutilisateur == reponse){
+   alert("Bien joué ! T'es trop fort(e) !");
+   solution ++;
+   break ;
+ }
+ else {
+   alert("Faux ! Presque...");
+   break;
+ }
+}
+
+    </script>
+  </body>
+</html>

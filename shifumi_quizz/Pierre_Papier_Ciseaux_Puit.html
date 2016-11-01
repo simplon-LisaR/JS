@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pierre, Papier, Ciseaux & Puit</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var choixUtilisateur = prompt("Choisissez entre pierre, papier, ciseaux ou puit et rien d'autre, sinon vous sortez du jeu ;)");
+var choixOrdi = Math.random();
+if (choixOrdi < 0.34) {
+choixOrdi = "pierre";
+} else if(choixOrdi <= 0.67) {
+choixOrdi = "papier";
+} else if (choixOrdi <= 0.76){
+choixOrdi = "puit";
+  } else {
+choixOrdi = "ciseaux";
+};
+var comparer = function(choix1,choix2)
+{
+if(choix1 == choix2) {
+alert("Egalité ! Vous avez choisi la même chose... Recommencez !");
+}
+else if
+(choix1 == "pierre")
+{ if(choix2 == "ciseaux")
+{
+  alert("La pierre écrase les ciseaux !");
+}
+else {
+  alert ("Le papier enveloppe la pierre !");
+}
+}
+else if
+(choix1 == "papier")
+{ if(choix2 == "pierre")
+{
+  alert ("Le papier enveloppe la pierre !");
+}
+else {
+   alert ("Les ciseaux coupent le papier !");
+ }
+ }
+else if
+(choix1 == "ciseaux")
+{ if(choix2 =="papier")
+{
+  alert ("Les ciseaux coupent le papier !");
+}
+else {
+  alert ("La pierre écrase les ciseaux !");
+  }
+  }
+  else if (choix1=="puit") {
+    if (choix2=="papier") {
+    alert ("Le papier recouvre le puit !");
+  } else {
+    alert ("Tout tombe dans le puit !");
+   }
+  }
+  else {
+  choixUtilisateur = prompt("Choisissez entre pierre, papier, ciseaux ou puits et rien d'autre, sinon vous sortez du jeu ;)");
+  return comparer(choixUtilisateur,choixOrdi);
+  }
+  };comparer(choixUtilisateur,choixOrdi);
+
+  </script>
+  </body>
+  </html>

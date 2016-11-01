@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    .bloc{
+      width: 100px;
+      height: 100px;
+      background: #ff0;
+      margin:6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="b1" class="bloc" onclick="masqueBloc('b1')">A Masquez moi</div>
+  <div id="b2" class="bloc" onclick="masqueBloc('b2')">B Masquez moi</div>
+  <div id="b3" class="bloc" onclick="masqueBloc('b3')">C Masquez moi</div>
+  <div id="b4" class="bloc" onclick="masqueBloc('b4')">D Masquez moi</div>
+
+  <div><a href="#" onclick="afficheTousLesBlocs()">Afficher tous</a></div>
+  <script>
+
+  function masqueBloc(blocId){
+    var div = document.getElementById(blocId);
+    if(div.style.display=="none"){
+      div.style.display = "block";
+      } else {
+        div.style.display = "none";
+      }
+  }
+
+
+  function afficheTousLesBlocs(blocId){
+      var n = document.getElementById('b1').style.display = 'block';
+      while(n) {
+          n = document.getElementById("b2").style.display = 'block';
+          n = document.getElementById("b3").style.display = 'block';
+          n = document.getElementById("b4").style.display = 'block';
+          break;
+      }
+
+  }
+
+  </script>
+
+</body>
+</html>

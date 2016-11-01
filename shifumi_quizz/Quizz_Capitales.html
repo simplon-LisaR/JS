@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+var pays = [
+    {pays: 'France', capitale: 'Paris'},
+    {pays: 'Espagne', capitale: 'Madrid'},
+    {pays: 'Italie', capitale: 'Rome'},
+    {pays: 'Belgique', capitale: 'Bruxelles'}
+];
+var dejaCHoisi = [];
+var nbVictoire = 0;
+var nbEssai = 3;
+var index;
+var reponse;
+var reponseUtilisateur;
+var question = "Quelle est la capitale du pays suivant : ";
+function joue() {
+    paysChoisi();
+    reponse = pays[index].capitale;
+    dejaCHoisi.push(pays[index].pays);
+    reponseUtilisateur = prompt(question + pays[index].pays);
+    nbEssai--;
+    if (reponse == reponseUtilisateur && nbVictoire == 3) {
+        alert("Bravo !");
+        return;
+    } else if (reponse == reponseUtilisateur) {
+        nbVictoire++;
+        nbEssai = 3;
+        joue();
+    } else if (response != reponseUtilisateur && nbEssai == 0) {
+        alert("Perdu !");
+        return;
+    } else {
+        joueEncore();
+    }
+}
+function joueEncore() {
+    nbEssai--;
+    reponseUtilisateur = prompt(question + pays[index].pays);
+    if (reponse == reponseUtilisateur && nbVictoire == 3) {
+        alert("Bravo !");
+        return;
+    } else if (reponse == reponseUtilisateur) {
+        nbVictoire++;
+        nbEssai = 3;
+        joue();
+    } else if (reponse != reponseUtilisateur && nbEssai == 0) {
+      alert("Perdu !");
+                         return;
+                     } else {
+                         joueEncore();
+                     }
+                 }
+                 function paysChoisi() {
+                     index = Math.floor(Math.random() * pays.length);
+                     if (nbVictoire > 0) {
+                         for (var i = 0; i < dejaCHoisi.length; i++) {
+                             if (pays[index].pays == dejaCHoisi[i]) {
+                                 paysChoisi();
+                             }
+                         }
+                         return index;
+                     }
+                     return index;
+                 }
+                 joue();
+</script>
+  </body>
+</html>
